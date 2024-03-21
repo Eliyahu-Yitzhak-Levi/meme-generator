@@ -1,0 +1,20 @@
+@media(min-width:500px) {
+    .navbar {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+@media(min-width:780px) {
+    .navbar {
+        display: flex;
+        font-size: 2em;
+        min-height: 100px;
+        background-color: #100f0f;
+        color: white;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 20px;
+    }
+}

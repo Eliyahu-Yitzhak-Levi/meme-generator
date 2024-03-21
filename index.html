@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/meme-editor-styles/styles.css">
+    <title>Document</title>
+</head>
+
+<body onload="onInit()">
+    <nav class="navbar">
+        <div onclick="resetPage()" class="logo">-MemeR-</div>
+        <div class="links">
+            <a onclick="resetPage()" href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Saved</a>
+            <a href="#">Randomize</a>
+        </div>
+    </nav>
+    <main class="main-content">
+
+        <fieldset class="container">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button type="submit">Search</button>
+            </div>
+            <div class="button-bar">
+                <button class="button">Happy</button>
+                <button class="button">Sad</button>
+                <button class="button">Sarcastic</button>
+                <button class="button">Crazy</button>
+                <button class="button">Funny</button>
+            </div>
+        </fieldset>
+        <div class="upload-box ">
+            <span class="upload-span"><i class="fa fa-upload" style="font-size:36px"></i>Upload image</span>
+        </div>
+        <section class="img-section">
+
+            <!-- MEMES ARE ADDED HERE -->
+
+        </section>
+
+        <section class="editor-section">
+            <div class="canvas-container">
+                <!-- <span class="meme-txt">Add text here</span> -->
+                <canvas class="canvas-meme-editor" width="800" height="800"></canvas>
+            </div>
+            <div class="editor-tools">
+                <span oninput="drawText(this)" contenteditable="true" class="editor-txt">Add text</span>
+                <div class="buttons-container-txt">
+                    <button onclick="onNextTxtLine()" class="change-txt-line">↑ ↓</button>
+                    <button onclick="onAddTxtLine()" class="add-txt-line">+</button>
+                    <button onclick="onDeleteTxtLine()" class="delete-txt-line">🗑</button>
+                </div>
+                <div class="buttons-container-main">
+
+                    <button class="btn-font plus">A+</button>
+                    <button class="btn-font minus">A-</button>
+                    <button class="align" data-alignment="left"><i class="fa-solid fa-align-left"></i></button>
+                    <button class="align" data-alignment="center"><i class="fa-solid fa-align-center"></i></button>
+                    <button class="align" data-alignment="right"><i class="fa-solid fa-align-right"></i></button>
+
+
+                    <select class="font-select" name="" id="">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                    <div class="color-button-container">
+                        <button class="stroke-color"><i class="fa-solid fa-brush"></i></button>
+                        <button class="fill-color"><i class="fa-solid fa-fill-drip"></i></button>
+                        <input type="color" class="stroke-color-picker-input">
+                        <input type="color" class="fill-color-picker-input">
+
+                    </div>
+                </div>
+
+                <div class="buttons-container-extra">
+                    <button class="save-btn"><i class="fa-solid fa-download"></i></button>
+                    <button class="share-btn"><i class="fa-solid fa-share"></i></button>
+                    <button class="download-btn"><i class="fa-solid fa-floppy-disk"></i></button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <script src="https://kit.fontawesome.com/43199eea0e.js" crossorigin="anonymous"></script>
+    <script src="meme-editor.utils.js"></script>
+    <script src="meme-editor.service.js"></script>
+    <script src="meme-editor.controller.js"></script>
+
+
+</body>
+
+</html>
