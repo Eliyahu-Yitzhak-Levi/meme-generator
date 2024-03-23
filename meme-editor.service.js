@@ -51,9 +51,10 @@ var gMeme = {
             xLineStart: 50,
             yLineStart: 50,
             xLineEnd: 0,
-            yLineEnd: 0
+            yLineEnd: 0,
+            isDrag: false,
         }
-        
+
     ]
 }
 
@@ -95,4 +96,9 @@ function getImgId() {
     const img = gImgs.find(img => img.id === gMeme.selectedImgId)
 
     return img // Return the found image object
+}
+
+function moveMemeLine(dx, dy) {
+    gMeme.lines[gMeme.selectedLineIdx].xLineStart += dx
+    gMeme.lines[gMeme.selectedLineIdx].yLineStart += dy
 }

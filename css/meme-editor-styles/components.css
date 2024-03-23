@@ -169,12 +169,12 @@ input {
 }
 
 
-.editor-section {
+/* .editor-section {
     padding: 100px 100px 100px 100px;
-    /* display: grid; */
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-}
+} */
 
 
 .canvas-container {
@@ -187,6 +187,7 @@ input {
 }
 
 .editor-tools {
+    min-width: 385px;
     border-radius: 10px;
     padding: 10px;
     background-color: #e2d2d2;
@@ -269,12 +270,6 @@ input {
     font-size: 1.5em;
 }
 
-.buttons-container-extra {
-    margin-top: 10%;
-    display: flex;
-    gap: 10px;
-}
-
 .buttons-container-extra>* {
     font-size: 1.5em;
     min-width: 100px;
@@ -291,5 +286,5 @@ input {
 .stroke-color-picker-input,
 .fill-color-picker-input {
     width: 100%;
-    
+
 }
