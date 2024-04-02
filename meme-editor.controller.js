@@ -18,8 +18,8 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d')
 
 
-    var elEditorSec = document.querySelector('.editor-section')
-    elEditorSec.style.display = 'grid'
+    // var elEditorSec = document.querySelector('.editor-section')
+    // elEditorSec.style.display = 'grid'
 
     resizeCanvas()
 
@@ -72,7 +72,7 @@ function renderMemeGallery() {
 
 
 function renderMeme(elImage, imgId) {
-    console.log(elImage, imgId);
+    // console.log(elImage, imgId);
     gCurrImgId = imgId
 
 
@@ -156,12 +156,11 @@ function drawText() {
     })
 }
 
-
 function onAddTxtLine() {
     gMeme.numOfLines++
     let line = newLine('Add text here', 20, 'black', gMeme.lines[gMeme.numOfLines - 1].xLineStart, gMeme.lines[gMeme.numOfLines - 1].yLineStart + 50)
     gMeme.lines.push(line)
-    console.log(gMeme.lines)
+    // console.log(gMeme.lines)
     drawText()
 }
 
@@ -169,7 +168,6 @@ function onNextTxtLine() {
     gMeme.selectedLineIdx++
     drawText()
 }
-
 
 function onDeleteTxtLine() {
     if (gMeme.numOfLines === 0) return
@@ -188,6 +186,7 @@ function onDeleteTxtLine() {
 function handleCanvasClick(event) {
     // Get the mouse coordinates relative to the canvas
     const canvasBounds = gElCanvas.getBoundingClientRect()
+
     const mouseX = event.clientX - canvasBounds.left
     const mouseY = event.clientY - canvasBounds.top
 
@@ -208,17 +207,12 @@ function handleCanvasClick(event) {
             const elEditorText = document.querySelector('.editor-txt').innerText.trim()
             gMeme.selectedLineIdx = index
             gMeme.lines[gMeme.selectedLineIdx].txt = elEditorText
-            gMeme.lines[gMeme.selectedLineIdx].isDrag = true
             onMove(event)
             drawText() // FUNCTION WORKS, SELECTS THE WANTED LINE TO EDIT ON THE CANVAS
 
         }
     })
 }
-
-
-
-
 
 function onSetFontSize() {
 
@@ -229,15 +223,14 @@ function onSetFontSize() {
             // Check which button was clicked based on its class
             if (button.classList.contains('plus')) {
                 // Handle click on the plus button
-                console.log('Plus button clicked')
+             
                 gMeme.lines[gMeme.selectedLineIdx].size += 5
-                console.log(gMeme.selectedLineIdx);
-                console.log(gMeme.lines[gMeme.selectedLineIdx].size);
+           
                 drawText()
 
             } else if (button.classList.contains('minus')) {
                 // Handle click on the minus button
-                console.log('Minus button clicked')
+              
                 gMeme.lines[gMeme.selectedLineIdx].size -= 5
                 drawText()
             }
@@ -289,9 +282,6 @@ function onSetFont() {
     })
 }
 
-
-// another idea.. adding a specific class to these elements and using querselector all to 
-// add event listerners to all of them using forEach loop
 function onSetTextColors() {
     // Stroke color button and input
     const strokeColorButton = document.querySelector('.stroke-color')
@@ -340,6 +330,8 @@ function onDown(ev) {
     // Save the position we started from...
     // Get the event position from mouse or touch
     gStartPos = getEvPos(ev)
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = true
+
 
 
 }

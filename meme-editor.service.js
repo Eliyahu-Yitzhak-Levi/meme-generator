@@ -50,8 +50,6 @@ var gMeme = {
             fillColor: '',
             xLineStart: 50,
             yLineStart: 50,
-            xLineEnd: 0,
-            yLineEnd: 0,
             isDrag: false,
         }
 
